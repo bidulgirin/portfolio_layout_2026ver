@@ -8,13 +8,38 @@
     <link rel="stylesheet" href="./style/css/common.css">
     <!-- 메인 css   -->
     <link rel="stylesheet" href="./style/css/main.css">
-    <script src="./script/common.js"></script>
 </head>
 <body>
+   
     <!-- 메뉴 -->
     <menu class="g_menu">
         <nav>
             <h1>
+                <svg id="svg-stage" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                    <linearGradient id="grad" x1="0" y1="0" x2="99" y2="99" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
+                        <stop offset="0.7" stop-color="rgb(247, 189, 248)" />
+                    </linearGradient>
+
+                    <path class="shape" id="flower" d="M73.8657 3.50781C86.354 3.50781 96.478 13.6348 96.478 26.127C96.478 38.6191 86.3539 48.7461 73.8657 48.7461C72.2258 48.7461 70.6272 48.569 69.0864 48.2373V52.2695C70.6271 51.9379 72.2259 51.7617 73.8657 51.7617C86.354 51.7617 96.478 61.8887 96.478 74.3809C96.478 86.873 86.3539 97 73.8657 97C61.3776 96.9999 51.2544 86.8729 51.2544 74.3809C51.2544 72.8954 51.3991 71.4436 51.6724 70.0381H47.8208C48.0941 71.4436 48.2388 72.8954 48.2388 74.3809C48.2388 86.8729 38.1155 96.9998 25.6274 97C13.1392 97 3.01515 86.873 3.01514 74.3809C3.01514 61.8887 13.1392 51.7617 25.6274 51.7617C27.1763 51.7617 28.6886 51.9181 30.1499 52.2148V48.292C28.6886 48.5888 27.1763 48.7461 25.6274 48.7461C13.1392 48.7461 3.01519 38.6191 3.01514 26.127C3.01514 13.6348 13.1392 3.50781 25.6274 3.50781C38.1155 3.50801 48.2388 13.6349 48.2388 26.127C48.2388 27.6761 48.0832 29.1888 47.7866 30.6504H51.7065C51.41 29.1888 51.2544 27.6761 51.2544 26.127C51.2544 13.6349 61.3776 3.5079 73.8657 3.50781Z" fill="#FF8709" />
+                    <path class="shape" id="windmill" d="M60.4859 49.3956H95.4586C95.7564 49.3956 96 49.6366 96 49.9311V94.3547C96 94.6519 95.7537 94.8956 95.4532 94.8929C70.4966 94.6064 50.3181 74.6612 50.0014 49.9846V94.4645C50.0014 94.759 49.7577 95 49.4599 95H4.54682C4.24633 95 3.99999 94.7563 4.00269 94.4591C4.29506 69.5791 24.7741 49.5027 49.9987 49.5H4.54142C4.24364 49.5 4 49.259 4 48.9645V4.54087C4 4.24366 4.24633 4 4.54682 4.00268C29.5034 4.28918 49.6819 24.2344 49.9987 48.9109V4.53551C49.9987 4.24098 50.2423 4 50.5401 4H95.4532C95.7537 4 96 4.24366 95.9973 4.54087C95.7456 25.9052 80.6076 43.7298 60.3641 48.3406C59.7387 48.4825 59.8443 49.3956 60.4886 49.3956H60.4859Z" fill="#0AE448" />
+                    <path class="shape" id="keyframe" fill-rule="evenodd" clip-rule="evenodd" d="M53.4913 46.1943C51.9593 47.7511 51.9593 50.249 53.4913 51.8057L89.3023 88.1943C91.7911 90.7232 89.9996 95 86.4513 95L50 95H13.5486C10.0004 95 8.20887 90.7232 10.6977 88.1943L46.5087 51.8057C48.0407 50.249 48.0407 47.7511 46.5087 46.1943L10.6977 9.80571C8.20888 7.27676 10.0004 3 13.5487 3L50 3L86.4514 3.00001C89.9996 3.00001 91.7911 7.27676 89.3023 9.80572L53.4913 46.1943Z" fill="#FF8709" />
+                    <path class="shape" id="lightning" fill-rule="evenodd" clip-rule="evenodd" d="M65.8426 4C67.3334 4 68.3002 5.57252 67.6272 6.90285L59.4856 22.9957C58.8126 24.326 59.7794 25.8985 61.2703 25.8985H69.3933C70.9638 25.8985 71.9215 27.6257 71.0898 28.9578L29.2278 96L41.3701 46.8644C41.6817 45.6034 40.7274 44.3846 39.4285 44.3846H30.0029C28.575 44.3846 27.6071 42.9313 28.1574 41.6137L43.356 5.22912C43.6669 4.4847 44.3947 4 45.2014 4L65.8426 4Z" fill="#0AE448" />
+                    <path class="shape" id="keyhole" d="M10.0509 88.3057L28.7699 51.1618C25.2984 46.5638 23.2697 40.8301 23.3513 34.624C23.541 20.0857 35.4705 8.21021 50.0986 8.00262C64.7267 7.79503 77.6501 19.9473 77.6501 34.9843C77.6501 41.0544 75.6335 46.6545 72.2291 51.1642L90.9481 88.308C91.109 88.6254 90.8762 89 90.5184 89H10.4806C10.1229 89 9.89244 88.6254 10.0509 88.308V88.3057Z" fill="#0AE448" />
+                    <path class="shape" id="union" d="M92.5088 9C92.7799 9.00016 93.0022 9.2209 93 9.49023C92.7532 30.5644 76.5914 47.8354 55.8965 50C76.5911 52.1646 92.7509 69.4356 93 90.5098C93.0022 90.7791 92.7799 90.9998 92.5088 91H10.4912C10.2201 90.9998 9.99781 90.7791 10 90.5098C10.2468 69.4359 26.4081 52.165 47.1025 50C26.4084 47.835 10.2491 30.564 10 9.49023C9.99781 9.2209 10.2201 9.00016 10.4912 9H92.5088Z" fill="#FF8709" />
+                    <path class="shape" id="scrolltrigger" d="M71.3976 63.0602H88C88 81.8024 71.4356 97 51 97C30.5644 97 14 81.8024 14 63.0602H30.6025C20.5983 56.9871 14 46.5692 14 34.7382H33.1569C21.7365 28.9599 14 17.8062 14 5H88C88 17.8062 80.2635 28.9599 68.8431 34.7382H88C88 46.5692 81.4017 56.987 71.3976 63.0573V63.0602Z" fill="#0AE448" />
+                    <path class="shape" id="star" d="M94.9903 43.075H65.4011L86.3097 22.1747C87.0845 21.3903 87.0845 20.1354 86.3097 19.3389L80.7647 13.8122C79.9899 13.0278 78.7065 13.0278 77.9317 13.8122L56.9263 34.809V5.00315C56.9263 3.90504 56.0183 3 54.9166 3H47.0834C45.9817 3 45.0858 3.90504 45.0858 5.00315V33.9523L24.1409 13.0157C23.354 12.2314 22.0828 12.2314 21.2958 13.0157L15.763 18.5546C14.9761 19.3389 14.9761 20.5939 15.763 21.3783L37.4706 43.0871H7.00974C5.89591 43.0871 5 43.9801 5 45.0902V52.9218C5 54.0199 5.89591 54.925 7.00974 54.925H36.8289L15.7025 76.0425C14.9155 76.8269 14.9155 78.0819 15.7025 78.8662L21.2353 84.405C22.0222 85.2015 23.2935 85.2015 24.0804 84.405L45.0858 63.4082V92.9969C45.0858 94.095 45.9817 95 47.0834 95H54.9166C56.0183 95 56.9263 94.095 56.9263 92.9969V62.5394L77.9801 83.5845C78.7671 84.3809 80.0383 84.3809 80.8252 83.5845L86.3581 78.0577C87.145 77.2734 87.145 76.0063 86.3581 75.2219L66.0428 54.9129H94.9903C96.1041 54.9129 97 54.0079 97 52.9098V45.0782C97 43.968 96.1041 43.075 94.9903 43.075ZM56.1999 53.1632L56.1152 53.1028H56.1636V53.0666L56.2362 53.139L56.1636 53.1028L56.1999 53.1632Z" fill="#FF8709" />
+                    <path class="shape" id="bang" d="M33.8065 67.4831L19.1846 97.1468C18.9078 97.7073 19.5751 98.256 20.0646 97.8716L50.4796 73.9563C50.7739 73.7245 51.2052 73.8272 51.3654 74.1676L58.688 89.8226C58.9123 90.3009 59.6029 90.2598 59.769 89.758L67.2635 67.1163C67.4004 66.7025 67.922 66.5793 68.228 66.8874L89.7789 88.5901C90.2452 89.0596 91.0086 88.508 90.7114 87.9123L76.4422 59.1729C76.209 58.7063 76.6549 58.1869 77.1474 58.3542L98.2292 65.4319C98.8119 65.6285 99.2607 64.8979 98.8265 64.4606L76.4801 41.9568C76.1741 41.6487 76.2965 41.1234 76.7074 40.9855L97.1627 34.119C97.7892 33.9077 97.6406 32.9746 96.9792 32.9746H76.9026C76.4364 32.9746 76.1596 32.4523 76.4189 32.062L91.1018 9.88094C91.434 9.37916 90.892 8.76 90.3559 9.02996L59.9089 24.3592C59.5913 24.5177 59.2067 24.3592 59.096 24.0188L51.6102 1.40054C51.4324 0.866485 50.6807 0.866485 50.5059 1.40054L43.1046 23.7606C42.9676 24.1744 42.446 24.2976 42.1401 23.9895L27.8389 9.5875C27.4164 9.16201 26.7112 9.57283 26.8627 10.1538L32.4661 31.2609C32.5972 31.7539 32.0873 32.1676 31.6356 31.9358L4.85423 18.0679C4.26271 17.7627 3.70621 18.5315 4.17534 19.004L25.633 40.6128C25.939 40.9209 25.8166 41.4462 25.4058 41.5841L4.95041 48.4506C4.32393 48.6619 4.4725 49.595 5.13395 49.595H26.0031C26.4752 49.595 26.7519 50.1291 26.481 50.5193L10.8072 73.0701C10.4838 73.5338 10.9355 74.1441 11.4687 73.9622L33.0983 66.6673C33.5908 66.5 34.0367 67.0165 33.8065 67.486V67.4831Z" fill="#0AE448" />
+                    <path class="shape" id="leaf" d="M90.5126 8.18339C90.7804 8.18098 91 8.40055 91 8.66837V49.1821C90.9011 71.771 72.5376 90.0458 49.9131 89.9999C27.2405 89.9541 9 71.2836 9 48.6079V8.485C9 8.21717 9.21956 7.99761 9.48737 8.00002C31.9067 8.2606 50 26.516 50 48.9988C50.0989 26.6005 68.1536 8.44398 90.5126 8.18339Z" fill="#FF8709" />
+                    <path class="shape" id="join" d="M38.8477 4C56.9892 4 71.6963 18.746 71.6963 36.9355C71.6963 37.126 71.6927 37.3161 71.6895 37.5059H96V95H38.6582V69.8672C20.6042 69.7647 6.00023 55.0614 6 36.9355C6 18.7461 20.7064 4.00026 38.8477 4Z" fill="#0AE448" />
+                    <path class="shape" id="horizontal" d="M93 49.5C93 74.0764 86.9566 94 79.502 94C75.5999 94 72.0863 88.5391 69.6238 79.8075C67.1588 88.5391 63.6451 94 59.743 94C55.3904 94 51.5168 87.2038 49.0518 76.6536C46.5842 87.2038 42.7106 94 38.358 94C34.43 94 30.893 88.469 28.428 79.6386C25.9604 88.469 22.426 94 18.498 94C11.0434 94 5 74.0764 5 49.5C5 24.9235 11.0434 5 18.498 5C22.426 5 25.9604 10.531 28.428 19.3614C30.893 10.531 34.43 5 38.358 5C42.7106 5 46.5842 11.7936 49.0518 22.3438C51.5168 11.7936 55.3904 5 59.743 5C63.6451 5 67.1614 10.4609 69.6238 19.1925C72.0837 10.4609 75.5999 5 79.502 5C86.9566 5 93 24.9209 93 49.5Z" fill="#FF8709" />
+                    <path class="shape" id="chess" d="M35.4561 64.999C35.7483 64.999 35.9851 65.236 35.9854 65.5283V94.4707C35.9852 94.763 35.7483 95 35.4561 95H6.5293C6.23709 95 6.0002 94.763 6 94.4707V65.5283C6.00021 65.236 6.2371 64.9991 6.5293 64.999H35.4561ZM95.4707 5C95.7617 5.00003 95.9998 5.23817 96 5.5293V34.4717C95.9998 34.7628 95.7617 35.0009 95.4707 35.001H66.5469C66.2558 35.001 66.0177 35.2391 66.0176 35.5303V64.4697C66.0177 64.7609 66.2558 64.999 66.5469 64.999H95.4707C95.7617 64.9991 95.9998 65.2372 96 65.5283V94.4707C95.9998 94.7618 95.7617 95 95.4707 95H66.5439C66.2529 95 66.0148 94.7618 66.0146 94.4707V65.5283C66.0144 65.2373 65.7762 64.9992 65.4854 64.999H36.5605C36.2696 64.9988 36.0314 64.7608 36.0312 64.4697V35.5303C36.0314 35.2392 36.2696 35.0012 36.5605 35.001H65.4854C65.7762 35.0008 66.0144 34.7627 66.0146 34.4717V5.5293C66.0148 5.23815 66.2529 5 66.5439 5H95.4707ZM35.501 5C35.7932 5 36.0301 5.23694 36.0303 5.5293V34.4717C36.03 34.764 35.7932 35.001 35.501 35.001H6.57422C6.28206 35.0009 6.04515 34.7639 6.04492 34.4717V5.5293C6.0451 5.23699 6.28203 5.00007 6.57422 5H35.501Z" fill="#0AE448" />
+                    </defs>
+
+                    <path class="shape" id="morph" fill="url(#grad)" d="M97 65.5C97 69.9183 93.4183 73.5 89 73.5L50.6065 73.5C50.2703 73.5 49.9965 73.7703 49.9922 74.1064C49.6705 86.8049 39.2759 97 26.5 97C13.5213 97 3 86.4787 3 73.5C3 63.2737 9.53201 54.573 18.6514 51.3426C22.8161 49.8673 26.5 46.4183 26.5 42L26.5 11C26.5 6.58172 30.0817 3 34.5 3L89 3C93.4183 3 97 6.58172 97 11L97 65.5Z" fill="#0AE448" />
+
+                </svg>
             </h1>
             <ul>
                 <li>
@@ -47,11 +72,54 @@
             <div>
                 <h2 class="g_title">기술스택</h2>
                 <div class="container">
+                    <div class="bg">
+                         <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 248">
+                            
+                            <g class="group1">
+                            <image href="https://assets.codepen.io/16327/flair-2.png" />
+                            <image href="https://assets.codepen.io/16327/flair-2.png" />
+                            <image href="https://assets.codepen.io/16327/flair-2.png" />
+                            </g>
+
+                            <g class="group2">
+                            <image href="https://assets.codepen.io/16327/flair-3.png" mask="url(#g2_mask)"/>
+                            </g>
+                            <mask id="g2_mask" fill="#fff">
+                            <circle cx="124" cy="0" r="0"/>
+                            <circle cx="124" cy="248" r="0"/>
+                            </mask>
+
+                            <g class="group3">
+                            <image href="https://assets.codepen.io/16327/flair-4.png" mask="url(#g3_mask)"/>
+                            </g>
+                            <mask id="g3_mask" fill="#fff">
+                            <rect x="0" y="0" width="124" height="124"/>
+                            <rect x="124" y="0" width="124" height="124"/>
+                            <rect x="0" y="124" width="124" height="124"/>
+                            <rect x="124" y="124" width="124" height="124"/>
+                            </mask>
+
+                            <g class="group4">     
+                            <image href="https://assets.codepen.io/16327/flair-5.png" x="70" />
+                            </g>
+
+                            <g class="group5">
+                            <image href="https://assets.codepen.io/16327/flair-7.png" mask="url(#g5_mask)"/>
+                            </g>
+                            <mask id="g5_mask" fill="#fff">
+                            <path d="M0 248h248L124 0 0 247z"/>
+                            <circle cx="124" cy="83" r="83"/>
+                            </mask>
+                            
+                        </svg>
+                    </div>
                      <ul>
-                        
                         <li>
                             <div class="g_stack">
                                 <img src="data:image/png;base64,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" alt="">
+                                <div class="point">
+                                    확인
+                                </div>
                             </div>
                             <div>
                                 HTML
@@ -63,6 +131,14 @@
                             </div>
                             <div>
                                 CSS
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                SCSS
                             </div>
                         </li>
                          <li>
@@ -153,6 +229,46 @@
                                 PHP
                             </div>
                         </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                MySQL
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                PostgreSQL
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                PHOTOSHOP
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                ILLUSTRATOR
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                AFTER EFFECT
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -172,13 +288,6 @@
                             히히히히히히
                         </div>
                     </li>
-                    <li>최근작업물</li>
-                    <li>최근작업물</li>
-                    <li>최근작업물</li>
-                    <li>최근작업물</li>
-                    <li>최근작업물</li>
-                    <li>최근작업물</li>
-                    <li>최근작업물</li>
                 </ul>
             </div>
         </section>
@@ -186,7 +295,7 @@
            <h2 class="g_title">
                 블로그&Contact
            </h2>
-           <div class="g_form">
+           <div class="contact_layout">
                 <form action="" >
                     <label for="">
                         <input type="text" name="name" placeholder="성함/업체이름" required>
@@ -199,24 +308,30 @@
                     </label>
                     <textarea name="" id="" placeholder="문의사항"></textarea>
                 </form>
-           </div>
-           <div>
-                <ul>
-                    <li>
-                        
-                        <a href="https://github.com/bidulgirin">
-                            <img src="" alt="">
-                        </a>
-                        <a href="https://www.notion.so/Final-Project-2df941ec8f178037a0d1c9fad91442dd">
-                            <img src="" alt="노션">
-                        </a>
-                        <a href="https://velog.io/@pipgma/posts">
-                            <img src="" alt="velog">
-                        </a>
-                    </li>
-                </ul>
+                <div class="layout_blog">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/bidulgirin">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAflBMVEX///8AAACPj4/V1dX8/Pzz8/Pn5+fu7u7e3t739/c1NTXr6+v29vbx8fGlpaWwsLCYmJhRUVEfHx+CgoIlJSV6enrNzc07Ozu8vLxERER0dHRJSUlhYWHGxsZYWFgaGhpqamouLi6dnZ0LCwuQkJB/f3+tra0UFBQjIyNlZWWz/V0sAAALM0lEQVR4nO1da3eqOhDVgqhYBcUH9vgA7ev8/z94L6VWwITsCQmTrnX250KzJZn3TAaDf/gHFKNxMJl43tbzJpNgPOJejjkEx2iRHHbn67CO63l3SBbRMeBeoD6egzTehEM1wk2cBs/cyyVi5r0ezgC5O86HV2/GvWwUx2Tf3JIYrvvkyL14JUbRQYvcHYfIYSEUXJYd6ZVYXpwUP9P0ZIReiVM65SbUgLfRO3pyXDceN6k7ptGHYXolPiI3PuQ4pukFCs7xmJveIEis0SuR8EqdWWaZX4GMzxIY2/5+NyQ8e3Ua98SvQMwgc95XPRIcDlfvPfPzEKfBLMI+9eNzXwewjqQ3FytdsxAcDtdpL/zmXb2HLjjM7RNMGfkVsP0Z/Q0zweFw49skOOlfhD4inNgjeOEm942LJX5TThFTx8HKTg123Lwq2FnwOLbcpBrYmia44Gb0gIVZgvxK4hFvJgn+5WYjxF9zBM2EQc1jaYjfaM/NRIq9kfj42CUt0cTOQHxj3q8vT8VnZ2dj5DbB/yl23Kgjl7doiV0nir6rUrSKZRcj9TcQ7KQ03FT0j9BW/TwRNR0kegQj7nUTEOkQ9LhXTYJGuHjMvWYiyMaN764xKsaeqjNeuFdMxguN4G+SMjeQpE2gfN3ZTnGCFNdPtYFMiU6pDmEUzMdBECX9WK1ZvJ2NR/NAlZLd4wSfFK/Kf0717JIboiFDdq8dmqv+9gkleFS9qWZCTBJ71SbhoiYhlXURYOHfs3LFDfX6HNlRLYdmTFSZ9zpjOVRl5DB/fGZrvuzk6VFwjJS//QYhqLbWhK+Zm7XTX4UKXF0ciFhv6gSaJElpsLzmTRJ9eVc+GaoJAhk0afAnMBMaz6QJwon6YWXmTa3rh6uWx8Up1PUpiRfpcetNZqPRaDbxtsd0EScnYcVDa1WJenVKvQ/ELdoNwOoeuOaHS9qesZ2kl0NerU1t/wZAla4ipqFUhUNl0icoYx9hFnloLHPuRVn58Q+KL4BUmrUrRSRPr1Sr6W4TBVRnxg+izU5ZaIFUgrQKG8il4CxqBURNq5MxhYqdrFZ7KPCMLHAtXyGW6OVk6EMrlEoK6Adq+4Xsw4fc0qvMPFU5TSV2vVJqIofW+Cp+GNsBiF1kDz5YFil+Giy3EHgW/cEHk33ik/iJPcx7DkFvey16GA6vuS9Lh2L/B/bTObvnRugi/zw+i1ikJTg7rvBkymNVGJ4r1MrzGAIeqc6ajyojdXdoJuuMgBBGaB4mQmWeUE71BEKXQFNhUBoM+LoCp4RVNvQ2KR3aT9eDCKRGgbpEJIWQTkz8oCDGHbXqTHWYuwauhsAZaZWrqoeBK8NfxLCmEmlxTj6VT6ueqMTm/ZzyIJ+gIeam70lALL5zg8S77AmYl/6Ne6iW0u8qMGl7BSWRF/88Relm4h5ZAaQdfvATjqCIqL7bcR9B6fy4CX2CpcAapPlGji/3JhQJusKFaRyE/qSbvsCt7oyR2B14Rv3bDSIcQ4u9jQQQlFt5EHGTjc/krgM3wMs8Ga5EjXfEaQI/iWUNEVyu7oIgLQEr8K+E8AgWNIY7/joA1onrIlqDGwn8835uwAuYCxMM3tTcFmkVf9BFF6ID/uK2esR1APfNFyfrDf1jN5RhCVglFsEaVLmcXZr2p67h+8YJz1c5o+5LwN/Fx4OscAFuL4DNlClulXKGZx4Be3wzXFm44DjdAUfdtviP4ZIoJQjTFChKLbFyY0rjDXCU/h3Wne6Y3SVycN0XWOG7xhB1L95gxcJbCvUItF3nBNuwLtndBfB1ozFkU1M2TAH12/fwfv6t3zAc5PBv4RbQvZcP0LkXv1XSrAZop+Rv1RYfA3QON2vRpQA5uO4r0oXyBc46IRHgCCG8Sz/cibQVGMPrhiXNb/UtVoMc/dNf6h/msNR1JmlRAnbcd3jmnz+/XQXq1v5vi8F5Gc6y0kfAkajTAB5KanCGnwHAJc1/8ZRx6FIYw4fFxwuhrtglhYgnnxLCbGCX1AVewrcg1MK5kyCllA1FhDqFjJtWBXjByZFSJ8ZNqwJ80QGl/N2dg0iopJ0OpvhFTe4kgfFjePXxcIBLgQy8yLRYM2E4Indt6Q2EOrXCEoPz+O5sU0KJaZHHJxSHu7JNCZXQRaMdpYzdDWlKWXERmYAjHkPDY9C1QajXL6NLcH3RkLdD9gZsMEKJMhdBGZEYK/57H6DcI1LO0iH1oTCzK0C5S7Ls6CXdXMHvYMARmgJl+AzuAP8C90kkWJn31ZLmO3IHpEiNTzcFTrsCiDf2TWpC+zHCaF19vKlSimqrWCikp1j3KWmPViQ/cWgwX3yfeGHRfbIccWrwlesoTojXKt/nW1Bnd695VMaYetdGJcJLO79M8W+8MeQb1QIZ8rWwYf8B8IB8c2bViKZpmQJ53xENjz5euyYuqNt0CE8lNgSNqzPrdWo6M9h7bFvXujqzPimIMhblB8u+dqqnNWu6IQ31Zjn34xATooEVZI23EGd/3PBp/zTqXl77YHnpDlZf2rXhjrqj+x+nHb9qvkkwOt0cUg0Z/41HOSiOlO/eJ2N/dly0V2yEdvppOl3fLpihIzrPn/cfYJG3vvDJtDXu6cmXG0QunsiuOVckrq8w7ZYXYyR977XrXQRCRSZKQtV+ipkqTRW+RN3j/t57lnekJyv+ERqn9ROGSO4/cTrWG4/pz9InQ7eeSLaTUJzUbR/UwM+zZHGETR5/crwkB7LvIIesdUIcI6jbLfMc/z94utH0DW9S/SXWPmHNbsH9UErEihhhUkDeGyILK9aSamiKmXbDlNFbzVvEnSzoVrvLHAt4rWmBDnKIogVtv630+9QauSFnjWrm6BrYArSOBJRap1UFgwzVpjeCGbsRVOGZS6MhVZEKuFp0+8bUfYsfiv8jD2dUj6/SX9bpsKFMjWuBcsyx1CAMK9JGOXVYJ5FKSn1KoU4cyTfLG/RXJXTukiYMa24BYBjLXYiqpdBelqRX9W5C1kCRI+l5qJVEtVohejM0DBg2WA+hPABe03Ft69GLT2lGw6oARbg0613/hVo2ql4glTLWUgzY1pfGf+qGipdL/uxTzz98lr0PBd6NLd2nDUvFF3/tV91Jyl1DFwQzQ7oBm7J4FDeMoFXSIUZMGtf9CJISlhkt2eOfbuPTnzDc/1meNu+4Wy9Et0uIBWtrgbSvSJzf9s3cW9LpcsEdcQ0yuWa1ELpTMIO8fWTKyWaRQheVr3H8JdYbdJepJjow1MrzSUInFnNN+gwPWv9vmovfZi/zq80w16x+kVTofOq4RhB0Ga60a18kAnVtq+pLl2GHXSVzdC3N39Nk2CkbJNMZmZWyLz2GHUsJpGHMC3bJNwlaDDvvJ6kR/mk87avF0EDzQIujG74J7zOe6FLXYGikO0JVEbZMLoso3XrbY3EXdZbrjzqlMzR0Bxw5paBb8UZmaEymU0NEfX1DgwYkMafQE0Oj3ZATUlFYLwxXhu3jOSVKpNuRQWG4N++oEkIMPTC00s2K54bsM7R0UyhcTG6b4Ye1jusxmB3S3UIgw6XNVghsDXYZWh4O7yG5aN1oFcIwtD4TwAeWYZHhUx93ZnvKK8qtMVz3NdRBVb5LK/i6Q8Wwx95Or12o2mG47HcqR5r3zDDv/fYJv8X3zzTf2cJw0YeEaWIqPY6Z5hulDN+4JhpOJCnNTPN9EoYvnCMAAuGidMdkCisjn7inUz0LsnC6VpvAe4mdmLj53rTkdMVeM1gSujP3dls7kGdtuVerHnhxa3LxKLobAfqa+V7Is4wsZA26Ioi/wlX7LpIv+CrHOsdct7crEXhe17XNPI9beP6Da/gPfNWsZr34KLUAAAAASUVORK5CYII=" alt="github">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.notion.so/Final-Project-2df941ec8f178037a0d1c9fad91442dd">
+                                <img src="data:image/png;base64,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" alt="노션">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://velog.io/@pipgma/posts">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNuQX1l6HQmFG-Jpg_stYnV1j9efZ-Mvbgrg&s" alt="velog">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
            </div>
         </section>
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/MorphSVGPlugin.min.js"></script>
+<script src="./script/common.js"></script>
 </html>
