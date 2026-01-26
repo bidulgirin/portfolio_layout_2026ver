@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뭐만들지</title>
+    <!-- 공통 css  -->
+    <link rel="stylesheet" href="./style/css/common.css">
+    <!-- 메인 css   -->
+    <link rel="stylesheet" href="./style/css/main.css">
+    <script src="./script/common.js"></script>
+</head>
+<body>
+    <!-- 메뉴 -->
+    <menu class="g_menu">
+        <nav>
+            <h1>
+            </h1>
+            <ul>
+                <li>
+                    <a href="./">Home</a>
+                </li>
+                <li>
+                    <a href="./">github</a>
+                </li>
+                <li>
+                    <a href="./">notion</a>
+                </li>
+            </ul>
+        </nav>
+    </menu>
+    <main>
+        <section id="main">
+            <div class="box box1">
+                BIDULGIRIN
+                <div class="box_point"></div>
+            </div>
+            <div class="box box2">
+                <div class="main_logo">
+                    BI<br/>
+                    BIDUL
+                </div>
+                <img src="./style/img/img.png" alt="">
+            </div>
+        </section>
+        <section id="introduce" class="g_section">
+            <div>
+                <h2 class="g_title">기술스택</h2>
+                <div class="container">
+                     <ul>
+                        
+                        <li>
+                            <div class="g_stack">
+                                <img src="data:image/png;base64,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" alt="">
+                            </div>
+                            <div>
+                                HTML
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                CSS
+                            </div>
+                        </li>
+                         <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                JS
+                            </div>
+                        </li>
+                         <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                REACT
+                            </div>
+                        </li>
+                         <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                NEXT
+                            </div>
+                        </li>
+                         <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                OPENAI
+                            </div>
+                        </li>
+                         <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                BS4
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                SELENIUM
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                ANDROID STUDIO
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                FLUTTER
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                KOTLIN
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                DJANGO
+                            </div>
+                        </li>
+                        <li>
+                            <div class="g_stack">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                PHP
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+         <section id="portfolio">
+            <h2 class="g_title">포트폴리오</h2>
+            <div class="container">
+                <ul>
+                    <li>
+                        <div class="p_img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzEMyd7fGtOJumPJkr7REpZCSvS1dNsD3dTA&s" alt="">
+                        </div>
+                        <div class="title">
+                            title
+                        </div>
+                         <div class="desc">
+                            히히히히히히
+                        </div>
+                    </li>
+                    <li>최근작업물</li>
+                    <li>최근작업물</li>
+                    <li>최근작업물</li>
+                    <li>최근작업물</li>
+                    <li>최근작업물</li>
+                    <li>최근작업물</li>
+                    <li>최근작업물</li>
+                </ul>
+            </div>
+        </section>
+         <section id="contact">
+           <h2 class="g_title">
+                블로그&Contact
+           </h2>
+           <div class="g_form">
+                <form action="" >
+                    <label for="">
+                        <input type="text" name="name" placeholder="성함/업체이름" required>
+                    </label>
+                    <label for="">
+                        <input type="text" name="contact" placeholder="연락처" required>
+                    </label>
+                    <label for="">
+                        <input type="text" name="email"  placeholder="이메일" required>
+                    </label>
+                    <textarea name="" id="" placeholder="문의사항"></textarea>
+                </form>
+           </div>
+           <div>
+                <ul>
+                    <li>
+                        
+                        <a href="https://github.com/bidulgirin">
+                            <img src="" alt="">
+                        </a>
+                        <a href="https://www.notion.so/Final-Project-2df941ec8f178037a0d1c9fad91442dd">
+                            <img src="" alt="노션">
+                        </a>
+                        <a href="https://velog.io/@pipgma/posts">
+                            <img src="" alt="velog">
+                        </a>
+                    </li>
+                </ul>
+           </div>
+        </section>
+    </main>
+</body>
+</html>
