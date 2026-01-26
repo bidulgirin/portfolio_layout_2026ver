@@ -36,7 +36,4 @@ const tl2 = gsap.timeline({repeat:-1, repeatDelay:0.5})
 .fromTo('#g5_mask path', {transformOrigin:'124 124', scale:0},{duration:0.8, scale:1, ease:'expo'}, 4.7)
 .fromTo('#g5_mask circle', {transformOrigin:'83 0', scale:0},{scale:1, ease:'expo'}, 4.7)
 
-
-GSDevTools.create({animation: tl2});
-
-
+//GSDevTools.create({animation: tl2});
