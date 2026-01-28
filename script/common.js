@@ -203,3 +203,213 @@ function animate() {
   requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
+
+// 마우스 효과
+
+const bg = document.querySelector(".parallax-bg");
+
+let mx = 0,
+  my = 0; // target
+let cx = 0,
+  cy = 0; // current (smooth)
+
+const MAX_MOVE = 80; // 움직임 강도(px) - 숫자 키우면 더 크게 움직임
+const EASE = 0.12; // 부드러움(0~1) - 작을수록 더 느리게 따라옴
+
+document.addEventListener("mousemove", (e) => {
+  // -0.5 ~ 0.5 (화면 중앙 기준)
+  mx = e.clientX / window.innerWidth - 0.5;
+  my = e.clientY / window.innerHeight - 0.5;
+});
+
+function mainAnimate() {
+  // 부드럽게 따라오기
+  cx += (mx - cx) * EASE;
+  cy += (my - cy) * EASE;
+
+  // 배경은 보통 "반대 방향"으로 움직이면 깊이감이 더 좋아서 - 붙임
+  const x = -cx * MAX_MOVE;
+  const y = -cy * MAX_MOVE;
+
+  bg.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+  requestAnimationFrame(mainAnimate);
+}
+requestAnimationFrame(mainAnimate);
+
+// 기술 스택 애니메이션
+document.addEventListener("DOMContentLoaded", () => {
+  const marquee = document.querySelector(".marquee");
+  if (!marquee) return;
+
+  const track = marquee.querySelector(".marquee__track");
+  const list = marquee.querySelector(".marquee__list");
+
+  if (!track || !list) {
+    console.error(
+      "Marquee 요소를 찾지 못했습니다. .marquee / .marquee__track / .marquee__list 확인",
+    );
+    return;
+  }
+
+  // 이미 복제했는지 체크(중복 방지)
+  if (!track.dataset.cloned) {
+    const clone = list.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    track.appendChild(clone);
+    track.dataset.cloned = "true";
+  }
+
+  const SPEED = 80; // px/s
+
+  let x = 0;
+  let last = performance.now();
+  let loopWidth = 0;
+
+  function measureAndFixX() {
+    const newWidth = list.scrollWidth || 0;
+    if (newWidth <= 0) return;
+
+    // loopWidth가 바뀌어도 현재 위치가 자연스럽게 유지되도록 보정
+    // x는 음수 방향으로 움직이므로 (-x) % width 형태로 정규화
+    const progressed = loopWidth > 0 ? -x % loopWidth : 0;
+    loopWidth = newWidth;
+    x = -progressed; // 같은 진행률로 유지
+
+    track.style.transform = `translate3d(${x}px,0,0)`;
+  }
+
+  // resize 디바운스 (RAF)
+  let resizeRaf = 0;
+  function onResize() {
+    cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(measureAndFixX);
+  }
+
+  function tick(now) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const dt = (now - last) / 1000;
+    last = now;
+
+    x -= SPEED * dt;
+
+    if (loopWidth > 0 && -x >= loopWidth) {
+      x += loopWidth;
+    }
+
+    track.style.transform = `translate3d(${x}px,0,0)`;
+    requestAnimationFrame(tick);
+  }
+
+  // 최초 측정(이미지 로딩 전/후 둘 다 대응)
+  measureAndFixX();
+
+  window.addEventListener("resize", onResize);
+  window.addEventListener("orientationchange", onResize);
+
+  // 이미지/폰트 로딩 끝나면 폭이 달라질 수 있어서 재측정
+  window.addEventListener("load", () => {
+    measureAndFixX();
+    last = performance.now();
+  });
+
+  // 웹폰트 로딩으로 폭 바뀌는 케이스 보강(지원 브라우저에서만)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => measureAndFixX());
+  }
+
+  requestAnimationFrame(tick);
+});
+
+// container 효과
+const containers = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("is-active", entry.isIntersecting);
+    });
+  },
+  {
+    threshold: 0.7, // 70%만 보여도 활성화
+    rootMargin: "0px 0px -10% 0px", // 살짝 “들어왔을 때”를 앞당기거나 늦출 수 있음
+  },
+);
+
+containers.forEach((el) => observer.observe(el));
+
+// 클릭 물결
+document.querySelectorAll("body").forEach((wrap) => {
+  wrap.addEventListener("click", (e) => {
+    const rect = wrap.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // 가장 큰 반지름(대각선) 기준으로 ripple 크기 잡기
+    const size = Math.hypot(rect.width, rect.height) * 2;
+
+    const ripple = document.createElement("span");
+    ripple.className = "ripple";
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x - size / 2}px`;
+    ripple.style.top = `${y - size / 2}px`;
+
+    // 원하는 색 (예: 흰색 물결)
+    ripple.style.background = "white";
+
+    wrap.appendChild(ripple);
+
+    ripple.addEventListener("animationend", () => ripple.remove());
+  });
+});
+
+// 서버로 전송
+const form = document.getElementById("contactForm");
+const lightbox = document.getElementById("lightbox");
+const lbClose = document.getElementById("lbClose");
+const backdrop = lightbox.querySelector(".lightbox__backdrop");
+
+function openLightbox() {
+  lightbox.classList.add("is-open");
+  lightbox.setAttribute("aria-hidden", "false");
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+}
+
+lbClose.addEventListener("click", closeLightbox);
+backdrop.addEventListener("click", closeLightbox);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+});
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const fd = new FormData(form);
+  const payload = Object.fromEntries(fd.entries());
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      alert(err?.message || "전송에 실패했습니다. 잠시 후 다시 시도해주세요.");
+      return;
+    }
+
+    // 성공
+    openLightbox();
+    form.reset();
+  } catch (err) {
+    alert("네트워크 오류가 발생했습니다.");
+  }
+});
