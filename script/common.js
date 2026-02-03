@@ -347,7 +347,6 @@ document.querySelectorAll("body").forEach((wrap) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // 가장 큰 반지름(대각선) 기준으로 ripple 크기 잡기
     const size = Math.hypot(rect.width, rect.height) * 2;
 
     const ripple = document.createElement("span");

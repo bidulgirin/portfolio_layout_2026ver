@@ -1,0 +1,500 @@
+@font-face {
+    font-family: "Paperozi";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy.woff2") format("woff2");
+    font-display: swap;
+}
+
+* {
+    --background: rgb(31, 31, 31);
+    --g_white: rgb(243, 243, 243);
+}
+
+.g_white_txt {
+    color: var(--g_white);
+}
+
+section {
+    opacity: 0.3;
+    transition: opacity 300ms ease;
+    filter: grayscale(1);
+}
+
+section.is-active {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+#main {
+    background-color: var(--background);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .box {
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .cursor {
+        pointer-events: none;
+
+        &__ball {
+            position: fixed;
+            top: 0;
+            left: 0;
+            mix-blend-mode: difference;
+            z-index: 1000;
+
+            circle {
+                fill: #f7f8fa;
+            }
+        }
+    }
+    .box1 {
+        font-size: 15vw;
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+        position: relative;
+        text-wrap: nowrap;
+        .box_point {
+            background-color: var(--background);
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            bottom: 0;
+        }
+
+        .word,
+        .clone {
+            position: relative;
+            background: var(--color-just-black);
+            font-size: 10vw;
+            line-height: 60px;
+            padding-top: 5px;
+            box-shadow: 0px 0px 15px var(--color-just-black);
+        }
+    }
+    .box2 {
+        position: relative;
+        background-color: var(--background);
+        height: 70vh;
+
+        overflow: hidden;
+        position: relative;
+
+        .img-wrap {
+            background-repeat: repeat; /* or no-repeat */
+            background-size: cover; /* or contain */
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-top-right-radius: 50px;
+            display: inline-block;
+            overflow: hidden; /* 물결이 밖으로 안 나가게 */
+            display: block;
+        }
+
+        .img-wrap svg {
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            -webkit-user-drag: none;
+            border-top-left-radius: 2px;
+            border-radius: 5px;
+
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .main_logo {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            font-size: 8vw;
+            font-weight: bolder;
+        }
+    }
+    .parallax-bg {
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transform: translate3d(0, 0, 0);
+        will-change: transform;
+    }
+}
+
+/* ripple 원 */
+.ripple {
+    position: absolute;
+    border-radius: 9999px;
+    transform: scale(0);
+    pointer-events: none;
+    opacity: 0.35;
+    animation: ripple 600ms ease-out;
+    background: currentColor; /* 필요하면 아래에서 색 바꿔도 됨 */
+}
+.g_btn {
+    background-color: black;
+}
+.g_l_btn {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+@keyframes ripple {
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+/* 상단 메인 메뉴 */
+.g_menu {
+    width: 100%;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 99;
+    box-sizing: border-box;
+    top: 0px;
+    left: 0;
+    color: white;
+    background-color: rgba(70, 70, 70, 0.527);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    backdrop-filter: blur(4px);
+    nav {
+        h1 {
+            width: 30px;
+        }
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            gap: 10px;
+            li {
+                :hover {
+                    transition: all 0.3s;
+                    color: rgb(248, 79, 79);
+                }
+                a {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+/* 공통 제목 */
+.g_title {
+    font-family: "Paperozi";
+    font-size: 30px;
+    text-align: center;
+    padding-top: 50px;
+    font-weight: 900 !important;
+}
+
+/* 소개글  */
+#introduce {
+    position: relative;
+    overflow: hidden;
+    .container {
+        width: 100%;
+        box-sizing: border-box;
+
+        .bg {
+            opacity: 0.3;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        ul {
+            position: relative;
+            width: 100%;
+            left: 0;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            text-align: center;
+            li {
+                .g_stack {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    text-align: center;
+                    border: 1px solid #dcdcdc;
+                    border-radius: 100px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        box-sizing: border-box;
+                        display: block;
+                    }
+                    + div {
+                        font-size: 0.6em;
+                        text-align: center;
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}
+/* 바깥 컨테이너*/
+.marquee {
+    overflow: hidden;
+    width: 100%;
+    padding: 12px 0; /* 필요 없으면 제거 */
+}
+
+/* 트랙: 가로로 나란히 */
+.marquee__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+/* (선택) 모션 줄이기 설정이면 멈춤 */
+@media (prefers-reduced-motion: reduce) {
+    .marquee__track {
+        transform: none !important;
+    }
+}
+#portfolio {
+    background-color: var(--background);
+    min-height: 100vh;
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        ul {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            li {
+                width: 30%;
+                .p_img {
+                    object-fit: cover;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    border-radius: 3px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
+                }
+                .title {
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+                .desc {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+#contact {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    .background_line_animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .contact_layout {
+        max-width: 500px;
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            border: 1px solid #dcdcdc;
+            padding: 10px;
+            width: 100%;
+            border-radius: 2px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            caret-color: #ff8411;
+        }
+        textarea:focus,
+        input:focus {
+            transition: all 0.1s;
+            outline: 1.2px solid #ff8411;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid #dcdcdc;
+            padding: 10px;
+            box-sizing: border-box;
+            height: 300px;
+            border-radius: 2px;
+            resize: none;
+        }
+        .layout_blog {
+            ul {
+                margin-top: 10px;
+                display: flex;
+                justify-content: end;
+                gap: 10px;
+                li {
+                    width: 40px;
+                    height: 40px;
+                    img {
+                        width: 100%;
+                    }
+                    transition: all 4s;
+                    :hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 9999;
+}
+.lightbox.is-open {
+    display: block;
+}
+
+.lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.lightbox__panel {
+    position: relative;
+    margin: 18vh auto 0;
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.custom-btn {
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+/* 8 */
+.btn-8 {
+    background-color: #f0ecfc;
+    background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-8 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: #c797eb;
+}
+.btn-8:before {
+    height: 0%;
+    width: 2px;
+}
+.btn-8:after {
+    width: 0%;
+    height: 2px;
+}
+.btn-8:hover:before {
+    height: 100%;
+}
+.btn-8:hover:after {
+    width: 100%;
+}
+.btn-8:hover {
+    background: transparent;
+}
+.btn-8 span:hover {
+    color: #c797eb;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: #c797eb;
+    /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+    transition: all 0.3s ease;
+}
+.btn-8 span:before {
+    width: 2px;
+    height: 0%;
+}
+.btn-8 span:after {
+    height: 2px;
+    width: 0%;
+}
+.btn-8 span:hover:before {
+    height: 100%;
+}
+.btn-8 span:hover:after {
+    width: 100%;
+}

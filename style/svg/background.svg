@@ -1,0 +1,37 @@
+ <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 248">
+              <g class="group1">
+                <image href="https://assets.codepen.io/16327/flair-2.png" />
+                <image href="https://assets.codepen.io/16327/flair-2.png" />
+                <image href="https://assets.codepen.io/16327/flair-2.png" />
+              </g>
+
+              <g class="group2">
+                <image href="https://assets.codepen.io/16327/flair-3.png" mask="url(#g2_mask)" />
+              </g>
+              <mask id="g2_mask" fill="#fff">
+                <circle cx="124" cy="0" r="0" />
+                <circle cx="124" cy="248" r="0" />
+              </mask>
+
+              <g class="group3">
+                <image href="https://assets.codepen.io/16327/flair-4.png" mask="url(#g3_mask)" />
+              </g>
+              <mask id="g3_mask" fill="#fff">
+                <rect x="0" y="0" width="124" height="124" />
+                <rect x="124" y="0" width="124" height="124" />
+                <rect x="0" y="124" width="124" height="124" />
+                <rect x="124" y="124" width="124" height="124" />
+              </mask>
+
+              <g class="group4">
+                <image href="https://assets.codepen.io/16327/flair-5.png" x="70" />
+              </g>
+
+              <g class="group5">
+                <image href="https://assets.codepen.io/16327/flair-7.png" mask="url(#g5_mask)" />
+              </g>
+              <mask id="g5_mask" fill="#fff">
+                <path d="M0 248h248L124 0 0 247z" />
+                <circle cx="124" cy="83" r="83" />
+              </mask>
+            </svg>

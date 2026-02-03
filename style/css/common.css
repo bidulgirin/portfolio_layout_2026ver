@@ -2,6 +2,13 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
 
 html,
 body,
@@ -92,6 +99,7 @@ video {
   vertical-align: baseline;
 }
 body {
+  font-family: "Pretendard";
   overflow-x: hidden;
 }
 
