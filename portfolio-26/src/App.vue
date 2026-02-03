@@ -1,7 +1,7 @@
 <template>
     <div>
         <HeaderBar name="Your Name" role="Frontend Developer" />
-
+        수정되었습니다.
         <main class="container hero">
             <div class="card heroCard">
                 <div class="headline">Board-style Portfolio</div>
