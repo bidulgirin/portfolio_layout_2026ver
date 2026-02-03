@@ -19,11 +19,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./portfolio-26
+        working-directory: ./portfolio_layout_2026ver
 
       - name: Build
         run: npm run build
-        working-directory: ./portfolio-26
+        working-directory: ./portfolio_layout_2026ver
 
       - name: SHOW AWS CLI VERSION
         env:
@@ -41,5 +41,5 @@ jobs:
         run: |
           aws s3 sync \
             --region us-east-1 \
-            ./portfolio-26/dist s3://bidulgirin-portfolio-bucket-26 \
+            ./portfolio_layout_2026ver/dist s3://bidulgirin-portfolio-bucket-26 \
             --delete
